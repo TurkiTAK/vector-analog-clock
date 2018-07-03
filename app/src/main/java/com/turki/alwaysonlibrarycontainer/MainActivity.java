@@ -24,6 +24,5 @@ public class MainActivity extends AppCompatActivity {
         vectorAnalogClock.setShowSeconds(true);
         vectorAnalogClock.setColor(Color.BLACK);
 
-
     }
 }
