@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = "vectoranalogclock"
+
+    publishedGroupId = libGroupId
+    libraryName = libName
+    artifact = libArtifactId
+
+    libraryDescription = libDescription
+
+    siteUrl = libUrl
+    gitUrl  = libGit
+
+    libraryVersion = projectVersion
+
+    developerId = 'TurkiAlkhateeb'
+    developerName = 'Turki Alkhateeb'
+    developerEmail = 'turki.khateeb@gmail.com'
+
+    licenseName = "MIT License"
+    licenseUrl = libLicenseUrl
+    allLicenses = ['MIT']
+}
+
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
