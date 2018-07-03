@@ -16,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.HOUR,-2);
 
-        MyAnalogClock analogClockView = findViewById(R.id.clock);
+        MyAnalogClock vectorAnalogClock = findViewById(R.id.clock);
 
-        analogClockView.setCalendar(calendar);
-        analogClockView.setDiameterInDp(400.0f);
-        analogClockView.setOpacity(1.0f);
-        analogClockView.setShowSeconds(true);
-        analogClockView.setColor(Color.BLACK);
+        vectorAnalogClock.setCalendar(calendar);
+        vectorAnalogClock.setDiameterInDp(400.0f);
+        vectorAnalogClock.setOpacity(1.0f);
+        vectorAnalogClock.setShowSeconds(true);
+        vectorAnalogClock.setColor(Color.BLACK);
 
 
     }
