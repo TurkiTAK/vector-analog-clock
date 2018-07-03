@@ -108,15 +108,16 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     private int color = 0xff000000;
     private float scale = 1.0f;
     private float opacity = 1.0f;
+    private Calendar calendar;
+
 
     private int dp;
-    int sizeInDp;
-    int sizeInPixels;
+    private int sizeInDp;
+    private int sizeInPixels;
+    private int diameterInPixels = 0;
+    private float diameterInDp = 0;
     private float scaleMultiplier = 1.0f;
-    float diameterInDp = 0;
-    int diameterInPixels = 0;
 
-    private Calendar calendar;
 
     /**
      * @return the calendar that the clock is operating with
@@ -131,9 +132,11 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     /**
      *  Sets the timing of the clock from the calendar object
      */
-    public void setCalendar(Calendar calendar) {
+    public VectorAnalogClock setCalendar(Calendar calendar) {
         this.calendar = calendar;
         tickTick();
+
+        return this;
     }
 
     /**
@@ -160,31 +163,37 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     /**
      * Sets the scale of the view.
      */
-    public void setScale(float scale) {
+    public VectorAnalogClock setScale(float scale) {
         this.scale = scale;
         this.setScaleY(scale * scaleMultiplier);
         this.setScaleX(scale * scaleMultiplier);
+
+        return this;
     }
 
     /**
      * @param diameterInDp: the desired diameter in dp
      */
-    public void setDiameterInDp(float diameterInDp){
+    public VectorAnalogClock setDiameterInDp(float diameterInDp){
         this.diameterInDp = diameterInDp;
         //scaleMultiplier = newSize / oldSize
         scaleMultiplier = diameterInDp / this.sizeInDp;
         setScale(scale);
+
+        return this;
     }
 
     /**
      * @param diameterInPixels: the desired diameter in pixels
      */
-    public void setDiameterInPixels(int diameterInPixels){
+    public VectorAnalogClock setDiameterInPixels(int diameterInPixels){
         this.diameterInPixels = diameterInPixels;
         //scaleMultiplier = newSize / oldSize
         scaleMultiplier = (diameterInPixels+0.0f) / (this.sizeInPixels+0.0f);
         Log.d("xx",scaleMultiplier+"");
         setScale(scale);
+
+        return this;
     }
 
     /**
@@ -199,9 +208,11 @@ public abstract class VectorAnalogClock extends RelativeLayout {
      *
      *               Default: 1.0f
      */
-    public void setOpacity(float opacity) {
+    public VectorAnalogClock setOpacity(float opacity) {
         this.opacity = opacity;
         main(ctx);
+
+        return this;
     }
 
     /**
@@ -214,9 +225,11 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     /**
      * @param color: hexadecimal color (ex: 0xff000000)
      */
-    public void setColor(int color) {
+    public VectorAnalogClock setColor(int color) {
         this.color = color;
         main(ctx);
+
+        return this;
     }
 
     /**
@@ -229,9 +242,11 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     /**
      * @param showSeconds: controls whether to show the seconds hand or not.
      */
-    public void setShowSeconds(boolean showSeconds) {
+    public VectorAnalogClock setShowSeconds(boolean showSeconds) {
         this.showSeconds = showSeconds;
         main(ctx);
+
+        return this;
     }
 
     /**

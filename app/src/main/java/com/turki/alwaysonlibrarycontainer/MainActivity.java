@@ -14,15 +14,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.HOUR,-2);
+        calendar.add(Calendar.HOUR, -2);
 
         MyAnalogClock vectorAnalogClock = findViewById(R.id.clock);
 
-        vectorAnalogClock.setCalendar(calendar);
-        vectorAnalogClock.setDiameterInDp(400.0f);
-        vectorAnalogClock.setOpacity(1.0f);
-        vectorAnalogClock.setShowSeconds(true);
-        vectorAnalogClock.setColor(Color.BLACK);
+        vectorAnalogClock.setCalendar(calendar)
+                .setDiameterInDp(400.0f)
+                .setOpacity(1.0f)
+                .setShowSeconds(true)
+                .setColor(Color.BLACK);
 
     }
 }
