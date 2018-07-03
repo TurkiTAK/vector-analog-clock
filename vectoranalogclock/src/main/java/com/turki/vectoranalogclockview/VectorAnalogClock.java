@@ -30,7 +30,7 @@ import java.util.Calendar;
  *  NOTE(2018): I have written this class long ago as a part of my app "Always On: Ambient Clock,"
  *              the app is now removed from Google Play Store.
  *
- *              I refactored the necessary parts to make it usable as a library.
+ *              I refactored it to make it usable as a library.
  *              Enjoy.
  */
 public abstract class VectorAnalogClock extends RelativeLayout {
@@ -39,10 +39,15 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     private AppCompatImageView analogHour;
     private AppCompatImageView analogMinute;
     private AppCompatImageView analogSecond;
-    private Drawable hour;
-    private Drawable minute;
-    private Drawable second;
-    private Drawable face;
+
+    @DrawableRes
+    private int faceId;
+    @DrawableRes
+    private int hourId;
+    @DrawableRes
+    private int minuteId;
+    @DrawableRes
+    private int secondId;
 
     private Context ctx;
 
@@ -95,21 +100,11 @@ public abstract class VectorAnalogClock extends RelativeLayout {
         main(ctx);
     }
 
-    @DrawableRes
-    private int faceId;
-    @DrawableRes
-    private int hourId;
-    @DrawableRes
-    private int minuteId;
-    @DrawableRes
-    private int secondId;
-
     private boolean showSeconds = true;
     private int color = 0xff000000;
     private float scale = 1.0f;
     private float opacity = 1.0f;
     private Calendar calendar;
-
 
     private int dp;
     private int sizeInDp;
@@ -118,6 +113,7 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     private float diameterInDp = 0;
     private float scaleMultiplier = 1.0f;
 
+    //-------------- Getters --------------\\
 
     /**
      * @return the calendar that the clock is operating with
@@ -127,16 +123,6 @@ public abstract class VectorAnalogClock extends RelativeLayout {
             calendar = Calendar.getInstance();
 
         return calendar;
-    }
-
-    /**
-     *  Sets the timing of the clock from the calendar object
-     */
-    public VectorAnalogClock setCalendar(Calendar calendar) {
-        this.calendar = calendar;
-        tickTick();
-
-        return this;
     }
 
     /**
@@ -158,6 +144,39 @@ public abstract class VectorAnalogClock extends RelativeLayout {
      */
     public float getScale() {
         return scale;
+    }
+
+    /**
+     * @return [0, 1.0]
+     */
+    public float getOpacity() {
+        return opacity;
+    }
+
+    /**
+     * @return hexadecimal integer color
+     */
+    public int getColor() {
+        return color;
+    }
+
+    /**
+     * @return boolean indicating if the clock is currently showing the seconds hand
+     */
+    public boolean isShowingSeconds() {
+        return showSeconds;
+    }
+
+    //-------------- Setters --------------\\
+
+    /**
+     *  Sets the timing of the clock from the calendar object
+     */
+    public VectorAnalogClock setCalendar(Calendar calendar) {
+        this.calendar = calendar;
+        tickTick();
+
+        return this;
     }
 
     /**
@@ -197,13 +216,6 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     }
 
     /**
-     * @return [0, 1.0]
-     */
-    public float getOpacity() {
-        return opacity;
-    }
-
-    /**
      * @param opacity: ranges from 0 (transparent) to 1.0 (opaque)
      *
      *               Default: 1.0f
@@ -216,13 +228,6 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     }
 
     /**
-     * @return hexadecimal integer color
-     */
-    public int getColor() {
-        return color;
-    }
-
-    /**
      * @param color: hexadecimal color (ex: 0xff000000)
      */
     public VectorAnalogClock setColor(int color) {
@@ -230,13 +235,6 @@ public abstract class VectorAnalogClock extends RelativeLayout {
         main(ctx);
 
         return this;
-    }
-
-    /**
-     * @return boolean indicating if the clock is currently showing the seconds hand
-     */
-    public boolean isShowingSeconds() {
-        return showSeconds;
     }
 
     /**
@@ -255,10 +253,10 @@ public abstract class VectorAnalogClock extends RelativeLayout {
     ViewTreeObserver.OnGlobalLayoutListener layoutListener;
     private void main(Context ctx) {
 
-        face = AppCompatResources.getDrawable(ctx,faceId);
-        hour = AppCompatResources.getDrawable(ctx,hourId);
-        minute = AppCompatResources.getDrawable(ctx,minuteId);
-        second = AppCompatResources.getDrawable(ctx,secondId);
+        Drawable face = AppCompatResources.getDrawable(ctx, faceId);
+        Drawable hour = AppCompatResources.getDrawable(ctx, hourId);
+        Drawable minute = AppCompatResources.getDrawable(ctx, minuteId);
+        Drawable second = AppCompatResources.getDrawable(ctx, secondId);
 
         int alpha255 = (int)(opacity * 255);
         face.setAlpha(alpha255);
