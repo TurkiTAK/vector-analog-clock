@@ -1,6 +1,6 @@
 # Vector Analog Clock
 
-![Tablet Screenshot](https://github.com/TurkiAlkhateeb/vector-analog-clock/blob/master/resized_tablet.png)
+![Tablet Screenshot](https://github.com/TurkiTAK/vector-analog-clock/blob/master/resized_tablet.png)
 
 A Simple, Customizable VectorAnalogClock View for Android.
 
@@ -10,7 +10,7 @@ Tested on various screen sizes and densities.
 Supports Custom Vector Assets.
 Supports back to API 14.
 
-[Clock Smooth Movement](https://github.com/TurkiAlkhateeb/vector-analog-clock/blob/master/phone.gif)
+[Clock Smooth Movement](https://github.com/TurkiTAK/vector-analog-clock/blob/master/phone.gif)
 
 
 ## Usage:
@@ -105,7 +105,7 @@ Note: XML attributes are not supported currently. Use **WRAP_CONTENT** for both 
 
 This will be the result:
 
-![Phone Screenshot](https://github.com/TurkiAlkhateeb/vector-analog-clock/blob/master/resized_phone.png)
+![Phone Screenshot](https://github.com/TurkiTAK/vector-analog-clock/blob/master/resized_phone.png)
     
 That's it!!
 Have fun.
