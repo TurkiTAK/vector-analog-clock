@@ -1,4 +1,5 @@
 # Vector Analog Clock
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Vector%20Analog%20Clock-green.svg?style=flat )]( https://android-arsenal.com/details/1/7026 )
 
 ![Tablet Screenshot](https://github.com/TurkiTAK/vector-analog-clock/blob/master/resized_tablet.png)
 
