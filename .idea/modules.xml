@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AlwaysOnLibraryContainer.iml" filepath="$PROJECT_DIR$/AlwaysOnLibraryContainer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vectoranalogclock/vectoranalogclock.iml" filepath="$PROJECT_DIR$/vectoranalogclock/vectoranalogclock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vector-analog-clock.iml" filepath="$PROJECT_DIR$/.idea/modules/vector-analog-clock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/vector-analog-clock.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/vector-analog-clock.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vectoranalogclock/vector-analog-clock.vectoranalogclock.iml" filepath="$PROJECT_DIR$/.idea/modules/vectoranalogclock/vector-analog-clock.vectoranalogclock.iml" />
     </modules>
   </component>
 </project>
